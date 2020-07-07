@@ -6,6 +6,7 @@ import random
 print('Code By : Ankush Singh')
 print('GitHub  : https://GitHub.com/ATCtech')
 print('Website : http://AnkushTechCreator.com\n')
+
 board={
     'TL':'-','TM':'-','TR':'-',
     'ML':'-','MM':'-','MR':'-',
@@ -46,10 +47,12 @@ def print_board():
     
 def play_again():
     again = input('\nWanna Play Again? (y/n) : ')
-    if(again=='y'):
+    if again=='y' :
         play()
-    else :
+    elif again=='n' :
         print('Thanks For Playing')
+    else :
+        play_again()
 
 def who_won(p):
     global game_ended
@@ -87,6 +90,7 @@ def play():
     global player_turn
     global total_turns
     init()
+    print_board()
     while total_turns<9 and not game_ended:
         if player_turn :
             while True :
